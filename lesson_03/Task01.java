@@ -1,7 +1,5 @@
 package lesson_03;
 
-import java.util.Scanner;
-
 public class Task01 {
     public static void main(String[] args) {
         double distance = 10;    // дистанция, которую бегун пробежал в первый день

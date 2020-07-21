@@ -1,6 +1,6 @@
 package lesson_03;
 
-public class Task01 {
+public class Lesson03_Task01 {
     public static void main(String[] args) {
         double distance = 10;    // дистанция, которую бегун пробежал в первый день
         double totalDistance = distance;   // суммарная дистанция, после первого дня равна дистанции за первый день

@@ -1,6 +1,6 @@
 package lesson_03;
 
-public class Task02 {
+public class Lesson03_Task02 {
     public static void main(String[] args) {
         int quantity = 1;       // кол-во клеток в стартовый момент
         for (int i = 0; i < 25; i=i+3) {        // цикл до 24 часов включительно с шагом в 3 часа

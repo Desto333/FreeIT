@@ -1,5 +1,7 @@
 package lesson_03;
 
+/* Напишите программу, определяющую сумму всех нечетных чисел от 1до 99 */
+
 public class Lesson03_Task07 {
     public static void main(String[] args) {
         int sum = 0;

@@ -1,5 +1,8 @@
 package lesson_03;
 
+/* Задание 7. Имеется прямоугольное отверстие размерами a и b, определить, можно ли его полностью закрыть круглой
+картонкой радиусом r. */
+
 import java.util.Scanner;
 
 public class Lesson03_Task7_met {
@@ -14,7 +17,7 @@ public class Lesson03_Task7_met {
 
         double d = Math.sqrt(a*a + b*b);    //вычисляем длину диагонали по теореме Пифагора
 
-        if(r >= d/2) System.out.println("Картонка закроет отверстие");
+        if(r >= d/2) System.out.println("Картонка закроет отверстие");  // сравниваем половину диагонали и радиус картонки
             else System.out.println("Картонка не закроет отверстие");
     }
 }

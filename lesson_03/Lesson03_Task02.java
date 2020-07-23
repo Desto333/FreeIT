@@ -1,5 +1,7 @@
 package lesson_03;
 
+/* Одноклеточная амеба каждые 3 часа делится на 2 клетки. Определить,сколько амеб будет через 3, 6, 9, 12,..., 24 часа. */
+
 public class Lesson03_Task02 {
     public static void main(String[] args) {
         int quantity = 1;       // кол-во клеток в стартовый момент

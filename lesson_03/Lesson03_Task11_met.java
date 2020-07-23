@@ -1,21 +1,23 @@
 package lesson_03;
 
+/* Задание 11. Имеется целое число, определить является ли это число простым, т.е. делится без остатка только на 1 и себя. */
+
 import java.util.Scanner;
 
 public class Lesson03_Task11_met {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        int num = sc.nextInt();
+        int num = sc.nextInt();         // вводим целое число
 
-        if(num == 0) {
+        if(num == 0) {      // проверяем, является ли число нулем
             System.out.println("Число - 0!!");
-        } else if(num<0) num = num*-1;
+        } else if(num<0) num = num*-1; // если число отрицательное - делаем его положительным, чтобы проверка была одинаковой с положительными числами
 
         int counter = 0;
-        for (int i = 2; i <= num-1; i++) {
-            if(num%i == 0) counter++;
+        for (int i = 2; i <= num-1; i++) {  // с помощью цикла перебираем все числа между 1 и нашим число и проверяем, делится ли на них наше число без остатка
+            if(num%i == 0) counter++;       // если делится без остатка, то прибавляем к счетчику 1
         }
-        if(num !=0 && counter == 0) System.out.println("Это простое число");
-            else if(num != 0) System.out.println("Это составное число");
+        if(num !=0 && counter == 0) System.out.println("Это простое число");    // если наше число не равно 0 и счетчик остается 0, значит число делится только на 1 и на самого себя, значит это простое число
+            else if(num != 0) System.out.println("Это составное число");        // иначе это составное число
     }
 }

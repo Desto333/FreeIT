@@ -10,28 +10,36 @@ public class Lesson03_Task14_met {
             arr[i] = (int)(Math.random()*10);
         }
 
-        int[] arrCopy = arr;    // создаем копию массива arr
+        for (int i = 0; i < arr.length; i++) {      // выводим массив на экран
+            System.out.print(arr[i] + " ");
+        }
+        System.out.println("\n");
 
-        for (int start = 0; start < arrCopy.length; start++) {          // сортируем копию массива по возрастанию
-            for (int index = 0; index < arrCopy.length-1; index++) {
-                if(arrCopy[index] > arrCopy[index+1]) {
-                    int temp = arrCopy[index];
-                    arrCopy[index] = arrCopy[index+1];
-                    arrCopy[index+1] = temp;
-                }
+        int min = arr[0];           // предполагаем, что минимальный элемент массива - первый элемент массива
+        int minIndex = 0;           // его индекс = 0
+        int max = arr[0];       // по аналогии с минимальным элементом, находим максимальный элемент и его индекс
+        int maxIndex = 0;
+
+        for (int i = 0; i < arr.length; i++) {      // перебираем все элементы массива, находим минимальный и максимальный элементы и их индексы
+            if(arr[i] < min){
+                min = arr[i];
+                minIndex = i;
+            }
+            if(arr[i] > max){
+                max = arr[i];
+                maxIndex = i;
             }
         }
 
-        for (int i = 0; i < arr.length; i++) {      // находим местонахождение минимального элемента в оригинальном массиве
-            if(arr[i] == arrCopy[0]) {
-                System.out.println("Минимальная оценка: " + arr[i] + ", находится под номером: " + i);  // выводим на экран
-            }
+        System.out.print("Минимальная оценка: " + min + ", находится под номером(-ами): " );  // выводим на экран минимальную оценку
+        for (int i = 0; i < arr.length; i++) {                  // выводим на экран номер(-а) минимальной оценки
+            if(arr[i] == min) System.out.print(i + " ");
         }
 
-        for (int i = 0; i < arr.length; i++) {      // находим местонахождение максимального элемента в оригинальном массиве
-            if(arr[i] == arrCopy[arrCopy.length-1]) {
-                System.out.println("Максимальная оценка: " + arr[i] + ", находится под номером: " + i);  // выводим на экран
-            }
+        System.out.println();
+        System.out.print("Максимальная оценка: " + max + ", находится под номером(-ами): ");  // выводим на экран максимальную оценку
+        for (int i = 0; i < arr.length; i++) {                  // выводим на экран номер(-а) максимальной оценки
+            if(arr[i] == max) System.out.print(i + " ");
         }
     }
 }

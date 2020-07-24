@@ -12,15 +12,18 @@ public class Lesson03_Task13_met {
             arr[i] = (int)(Math.random()*100);
         }
 
-        for (int start = 0; start < arr.length; start++) {          // сортируем массив по возрастанию
-            for (int index = 0; index < arr.length-1; index++) {
-                if(arr[index] > arr[index+1]) {
-                    int temp = arr[index];
-                    arr[index] = arr[index+1];
-                    arr[index+1] = temp;
-                }
+        for (int i = 0; i < arr.length; i++) {      // выводим массив на экран
+            System.out.print(arr[i] + " ");
+        }
+        System.out.println();
+
+        int max = arr[0];       // предполагаем, что максимальный элемент массива - первый элемент массива
+
+        for (int i = 0; i < arr.length; i++) {      // перебираем все элементы массива, находим максимальный элемент
+            if(arr[i] > max){
+                max = arr[i];
             }
         }
-        System.out.println("Наибольшее число последовательности: " + arr[arr.length-1]);       // выводим последний элемент отсортированного массива, который будем самым большим числом последовательности
+        System.out.println("Наибольшее число последовательности: " + max);       // выводим наибольшее число последовательности
     }
 }

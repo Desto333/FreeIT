@@ -16,18 +16,14 @@ public class Lesson03_Task14_met {
         System.out.println("\n");
 
         int min = arr[0];           // предполагаем, что минимальный элемент массива - первый элемент массива
-        int minIndex = 0;           // его индекс = 0
         int max = arr[0];       // по аналогии с минимальным элементом, находим максимальный элемент и его индекс
-        int maxIndex = 0;
 
         for (int i = 0; i < arr.length; i++) {      // перебираем все элементы массива, находим минимальный и максимальный элементы и их индексы
             if(arr[i] < min){
                 min = arr[i];
-                minIndex = i;
             }
             if(arr[i] > max){
                 max = arr[i];
-                maxIndex = i;
             }
         }
 

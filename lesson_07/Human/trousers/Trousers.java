@@ -1,6 +1,6 @@
 package lesson_07.Human.trousers;
 
-public interface Trousers {
+public interface Trousers{
     void putOn();
     void takeOff();
 }

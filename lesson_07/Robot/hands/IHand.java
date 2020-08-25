@@ -1,6 +1,6 @@
 package lesson_07.Robot.hands;
 
-public interface IHand {
+public interface IHand{
     void upHand();
     int getPrice();
 }

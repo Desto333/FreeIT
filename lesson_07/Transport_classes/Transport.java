@@ -1,6 +1,6 @@
 package lesson_07.Transport_classes;
 
-public abstract class Transport {
+public abstract class Transport{
     public int horse_power;
     public int maxSpeed;
     public int weight;

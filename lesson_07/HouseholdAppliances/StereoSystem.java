@@ -1,6 +1,6 @@
 package lesson_07.HouseholdAppliances;
 
-public class StereoSystem extends AudioVideoAppliances {
+public class StereoSystem extends AudioVideoAppliances{
 
     @Override
     public void plugin() {

@@ -1,6 +1,6 @@
 package lesson_07.Robot;
 
-public interface IRobot {
+public interface IRobot{
     void action();
 
     /**

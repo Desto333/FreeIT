@@ -1,6 +1,6 @@
 package lesson_07.Robot.heads;
 
-public class SonyHead implements IHead {
+public class SonyHead implements IHead{
     private int price;
 
     public SonyHead(int price) {

@@ -1,4 +1,4 @@
 package lesson_07.BankCards;
 
-public class MasterCardCards extends DebitCards {
+public class MasterCardCards extends DebitCards{
 }

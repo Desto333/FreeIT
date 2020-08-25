@@ -2,7 +2,7 @@ package lesson_07.Spacecraft;
 
 import java.util.Spliterator;
 
-public class Spaceport {
+public class Spaceport{
     public static void start(IStart obj) throws InterruptedException {
         if(!obj.isSystemReady()) {
             System.out.println("Предстартовая проверка провалена");

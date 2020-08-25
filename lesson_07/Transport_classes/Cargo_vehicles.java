@@ -1,6 +1,6 @@
 package lesson_07.Transport_classes;
 
-public class Cargo_vehicles extends Ground_transport {
+public class Cargo_vehicles extends Ground_transport{
     public int carrying_capacity;
 
     public String getInfo() {

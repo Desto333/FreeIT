@@ -1,6 +1,6 @@
 package lesson_07.Transport_classes;
 
-public class Military_aircrafts extends Air_transport {
+public class Military_aircrafts extends Air_transport{
     public boolean ejection_seat_availability;
     public int number_of_missiles_onboard;
 

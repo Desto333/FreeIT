@@ -1,6 +1,6 @@
 package lesson_07.Robot.legs;
 
-public class SonyLeg implements ILeg{
+public class SonyLeg implements ILeg {
     private int price;
 
     public SonyLeg(int price) {

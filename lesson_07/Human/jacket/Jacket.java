@@ -1,6 +1,6 @@
 package lesson_07.Human.jacket;
 
-public interface Jacket {
+public interface Jacket{
     void putOn();
     void takeOff();
 }

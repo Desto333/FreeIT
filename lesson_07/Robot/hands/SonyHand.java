@@ -1,6 +1,6 @@
 package lesson_07.Robot.hands;
 
-public class SonyHand implements IHand {
+public class SonyHand implements IHand{
     private int price;
 
     public SonyHand(int price) {

@@ -1,6 +1,6 @@
 package lesson_07.HouseholdAppliances;
 
-public class Computers extends HomeElectronics {
+public class Computers extends HomeElectronics{
 
     @Override
     public void plugin() {

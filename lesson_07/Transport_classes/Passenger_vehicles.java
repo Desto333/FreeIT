@@ -1,6 +1,6 @@
 package lesson_07.Transport_classes;
 
-public class Passenger_vehicles extends Ground_transport {
+public class Passenger_vehicles extends Ground_transport{
     public String body_type;
     public int passengers_number;
 

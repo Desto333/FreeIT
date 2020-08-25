@@ -4,7 +4,7 @@ import lesson_07.Human.jacket.Jacket;
 import lesson_07.Human.shoes.Shoes;
 import lesson_07.Human.trousers.Trousers;
 
-public class Human {
+public class Human{
     private String name;
     private Trousers trousers;
     private Shoes shoes;

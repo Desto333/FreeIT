@@ -2,7 +2,7 @@ package lesson_07.Spacecraft;
 
 import java.util.Random;
 
-public class SpaceX implements IStart {
+public class SpaceX implements IStart{
 
     @Override
     public boolean isSystemReady() {

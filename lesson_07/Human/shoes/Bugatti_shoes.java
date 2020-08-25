@@ -1,6 +1,6 @@
 package lesson_07.Human.shoes;
 
-public class Bugatti_shoes implements Shoes {
+public class Bugatti_shoes implements Shoes{
 
     @Override
     public void putOn() {

@@ -1,6 +1,6 @@
 package lesson_07;
 
-public class Lesson07_Task24_met {
+public class Lesson07_Task24_met{
     public static void main(String[] args) {
         TimeLapse time = new TimeLapse(58, 12, 10);
         TimeLapse time1 = new TimeLapse(5781);

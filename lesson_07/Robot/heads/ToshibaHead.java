@@ -1,6 +1,6 @@
 package lesson_07.Robot.heads;
 
-public class ToshibaHead implements IHead {
+public class ToshibaHead implements IHead{
     private int price;
 
     public ToshibaHead(int price) {

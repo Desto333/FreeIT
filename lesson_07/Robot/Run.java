@@ -10,7 +10,7 @@ import lesson_07.Robot.legs.SamsungLeg;
 import lesson_07.Robot.legs.SonyLeg;
 import lesson_07.Robot.legs.ToshibaLeg;
 
-public class Run {
+public class Run{
     public static void main(String[] args) {
         /*
         Создать по 3 реализации(Sony, Toshiba, Samsung) каждой запчасти(IHead, IHand, ILeg)

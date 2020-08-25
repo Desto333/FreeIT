@@ -4,7 +4,7 @@ import lesson_07.Robot.hands.IHand;
 import lesson_07.Robot.heads.IHead;
 import lesson_07.Robot.legs.ILeg;
 
-public class Robot implements IRobot {
+public class Robot implements IRobot{
     private IHead head;
     private IHand hand;
     private ILeg leg;

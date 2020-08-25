@@ -1,6 +1,6 @@
 package lesson_07.Human.trousers;
 
-public class Versace_trousers implements Trousers {
+public class Versace_trousers implements Trousers{
     @Override
     public void putOn() {
         System.out.println("Брюки Versace надеты!!!");

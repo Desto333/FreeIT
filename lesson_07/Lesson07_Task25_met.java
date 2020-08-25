@@ -2,7 +2,7 @@ package lesson_07;
 
 import java.util.Scanner;
 
-public class Lesson07_Task25_met {
+public class Lesson07_Task25_met{
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);            // create new Scanner object to be able to enter required amount of money
 

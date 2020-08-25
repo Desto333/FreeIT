@@ -1,6 +1,6 @@
 package lesson_07.Transport_classes;
 
-public class Civil_aircrafts extends Air_transport {
+public class Civil_aircrafts extends Air_transport{
     public int passenger_capacity;
     public boolean business_class_availabilty;
 

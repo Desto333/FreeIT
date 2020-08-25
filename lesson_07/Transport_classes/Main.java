@@ -1,6 +1,6 @@
 package lesson_07.Transport_classes;
 
-public class Main {
+public class Main{
     public static void main(String[] args) {
             Passenger_vehicles pv = new Passenger_vehicles();
             pv.horse_power = 100;

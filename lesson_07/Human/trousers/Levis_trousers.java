@@ -1,6 +1,6 @@
 package lesson_07.Human.trousers;
 
-public class Levis_trousers implements Trousers {
+public class Levis_trousers implements Trousers{
 
     @Override
     public void putOn() {

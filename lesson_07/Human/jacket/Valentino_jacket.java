@@ -1,6 +1,6 @@
 package lesson_07.Human.jacket;
 
-public class Valentino_jacket implements Jacket {
+public class Valentino_jacket implements Jacket{
 
     @Override
     public void putOn() {

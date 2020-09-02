@@ -3,11 +3,8 @@ package lesson_07.Robot.hands;
 public class SonyHand implements IHand{
     private int price;
 
-    public SonyHand(int price) {
-        this.price = price;
-    }
-
     public SonyHand() {
+        this.price = 650;
     }
 
     @Override

@@ -21,9 +21,9 @@ public class Run{
         Среди 3-х роботов найдите самого дорогого.
         */
 
-        Robot robot1 = new Robot(new SonyHead(1000), new ToshibaHand(550), new SamsungLeg(700));
-        Robot robot2 = new Robot(new SamsungHead(950), new SonyHand(650), new ToshibaLeg(680));
-        Robot robot3 = new Robot(new ToshibaHead(900), new SamsungHand(600), new SonyLeg(750));
+        Robot robot1 = new Robot(new SonyHead(), new ToshibaHand(), new SamsungLeg());
+        Robot robot2 = new Robot(new SamsungHead(), new SonyHand(), new ToshibaLeg());
+        Robot robot3 = new Robot(new ToshibaHead(), new SamsungHand(), new SonyLeg());
 
         robot1.action();
         System.out.println();

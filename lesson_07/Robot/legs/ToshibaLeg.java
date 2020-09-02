@@ -3,13 +3,9 @@ package lesson_07.Robot.legs;
 public class ToshibaLeg implements ILeg{
     private int price;
 
-    public ToshibaLeg(int price) {
-        this.price = price;
-    }
-
     public ToshibaLeg() {
+        this.price = 680;
     }
-
 
     @Override
     public void step() {

@@ -2,17 +2,17 @@ package lesson_07;
 
 public class Lesson07_Task24_met{
     public static void main(String[] args) {
-        TimeLapse time = new TimeLapse(58, 12, 10);
-        TimeLapse time1 = new TimeLapse(5781);
-        TimeLapse time2 = new TimeLapse(21, 36, 1);
+        TimeLapse time1 = new TimeLapse(58, 12, 10);
+        TimeLapse time2 = new TimeLapse(5781);
+        TimeLapse time3 = new TimeLapse(21, 36, 1);
 
-        System.out.println(time.compareTo(time1));
-        System.out.println(time2.compareTo(time));
         System.out.println(time1.compareTo(time2));
+        System.out.println(time3.compareTo(time1));
+        System.out.println(time2.compareTo(time3));
 
-        time.printOut();
         time1.printOut();
         time2.printOut();
+        time3.printOut();
     }
 
     public static class TimeLapse {
@@ -41,9 +41,9 @@ public class Lesson07_Task24_met{
         }
 
         public void printOut() {                                           // method, which calculates and prints out duration of an object
-            int sec = 0;
-            int min = 0;
-            int hrs = 0;
+            int sec;
+            int min;
+            int hrs;
 
             if(secLength >= 60) {
                 hrs = secLength / 3600;

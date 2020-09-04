@@ -1,7 +1,5 @@
 package lesson_10;
 
-/* Задание 32. Имеется текст. Следует составить для него частотный словарь.*/
-
 import java.util.*;
 
 public class Lesson10_Task32_met {

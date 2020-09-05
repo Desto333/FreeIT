@@ -35,14 +35,13 @@ public class Library {
         Scanner sc = new Scanner(System.in);
         while(true) {
             System.out.println("Введите новые данные книги: id..");
-            first: {
-                    int newId = Integer.parseInt(sc.nextLine());
+                    String tempStr = sc.nextLine();
+                    int newId = Integer.parseInt(tempStr);
                     for (int i = 0; i < list.size(); i++) {
                         if (list.get(i).getBookId() == newId) {
                             System.out.println("Ошибка! ID должен быть уникальным, такой id уже существует!");
-                            break first;
                         }
-                    }
+
                     book.setBookId(newId);
 
             }

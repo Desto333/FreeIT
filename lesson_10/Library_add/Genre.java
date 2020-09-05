@@ -31,6 +31,6 @@ public class Genre {
         return "Genre{" +
                 "id=" + id +
                 ", genre='" + genre + '\'' +
-                '}';
+                '}' + "\n";
     }
 }

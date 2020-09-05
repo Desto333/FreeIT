@@ -10,7 +10,7 @@ public class Menu {
     BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
     Library lib = new Library();
 
-    public void start() throws IOException {
+    public void start() {
         while (true) {
             System.out.println("Выберите действие (цифры 0-4): " + "\n" +
                     "- Для вывода всех книг нажмите 1." + "\n" +
@@ -19,71 +19,82 @@ public class Menu {
                     "- Для редактирования книги нажмите 4." + "\n" +
                     "- Для выхода из программы нажмите 0." + "\n");
 
-            switch (Integer.parseInt(reader.readLine())) {
-                case 1: {
-                    showAllBooksMenu();
-                    break;
+            try {
+                switch (Integer.parseInt(reader.readLine())) {
+                    case 1: {
+                        showAllBooksMenu();
+                        break;
+                    }
+                    case 2: {
+                        addBookMenu();
+                        break;
+                    }
+                    case 3: {
+                        System.out.println("Введите номер id книги, которую вы хотите удалить: ");
+                        removeBookMenu(Integer.parseInt(reader.readLine()));
+                        break;
+                    }
+                    case 4: {
+                        System.out.println("Введите номер id книги, которую вы хотите отредактировать: ");
+                        editBookMenu(Integer.parseInt(reader.readLine()));
+                        break;
+                    }
+                    case 0: {
+                        return;
+                    }
+                    default: {
+                        System.out.println("Сделайте корректный выбор." + "\n");
+                    }
                 }
-                case 2: {
-                    addBookMenu();
-                    break;
-                }
-                case 3: {
-                    System.out.println("Введите номер id книги, которую вы хотите удалить: ");
-                    removeBookMenu(Integer.parseInt(reader.readLine()));
-                    break;
-                }
-                case 4: {
-                    System.out.println("Введите номер id книги, которую вы хотите отредактировать: ");
-                    editBookMenu(Integer.parseInt(reader.readLine()));
-                    break;
-                }
-                case 0: {
-                    return;
-                }
-                default: {
-                    System.out.println("Сделайте корректный выбор." + "\n");
-                }
+            } catch (NumberFormatException | IOException e) {
+                System.out.println("Сделайте корректный выбор." + "\n");
             }
-
         }
     }
 
-    public void showAllBooksMenu() throws IOException {
-        System.out.println("Выберите, в каком порядке вывести список книг (цифры 1-3): " + "\n" +
-                "- Для вывода в алфавитном порядке по возрастанию нажмите 1." + "\n" +
-                "- Для вывода в алфавитном порядке по убыванию нажмите 2." + "\n" +
-                "- Для вывода в порядке добавления нажмите 3." + "\n");
+    public void showAllBooksMenu() {
+        ArrayList<Book> tempList = lib.getAllBooks();
         while (true) {
-            ArrayList<Book> tempList = lib.getAllBooks();
-            switch (Integer.parseInt(reader.readLine())) {
-                case 1: {
-                    Collections.sort(tempList);
-                    for (int i = 0; i < tempList.size(); i++) {
-                        System.out.println(tempList.get(i));
-                    }
-                    break;
-                }
-                case 2: {
-                    Collections.sort(tempList, Collections.reverseOrder());
-                    for (int i = 0; i < tempList.size(); i++) {
-                        System.out.println(tempList.get(i));
-                    }
-                    break;
-                }
-                case 3: {
-                    for (int i = 0; i < tempList.size(); i++) {
-                        System.out.println(tempList.get(i));
-                    }
-                    break;
-                }
-                default: {
-                    System.out.println("Сделайте корректный выбор.");
-                    break;
-                }
+            first:
+            {
+                System.out.println("Выберите, в каком порядке вывести список книг (цифры 1-3): " + "\n" +
+                        "- Для вывода в алфавитном порядке по возрастанию нажмите 1." + "\n" +
+                        "- Для вывода в алфавитном порядке по убыванию нажмите 2." + "\n" +
+                        "- Для вывода в порядке добавления нажмите 3." + "\n");
+                try {
+                    switch (Integer.parseInt(reader.readLine())) {
+                        case 1: {
+                            Collections.sort(tempList);
+                            for (int i = 0; i < tempList.size(); i++) {
+                                System.out.println(tempList.get(i));
+                            }
+                            break;
+                        }
+                        case 2: {
+                            Collections.sort(tempList, Collections.reverseOrder());
+                            for (int i = 0; i < tempList.size(); i++) {
+                                System.out.println(tempList.get(i));
+                            }
+                            break;
+                        }
+                        case 3: {
+                            for (int i = 0; i < tempList.size(); i++) {
+                                System.out.println(tempList.get(i));
+                            }
+                            break;
+                        }
+                        default: {
+                            System.out.println("Сделайте корректный выбор." + "\n");
+                        }
 
+                    }
+
+                } catch (NumberFormatException | IOException e) {
+                    System.out.println("Сделайте корректный выбор." + "\n");
+                    break first;
+                }
+                break;
             }
-            break;
         }
     }
 

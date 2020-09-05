@@ -42,7 +42,7 @@ public class Book implements Comparable{
                 "id=" + bookId +
                 ", title='" + title + '\'' +
                 ", genre=" + bookGenre +
-                '}' ;
+                '}' + "\n" ;
     }
 
     @Override

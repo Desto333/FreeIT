@@ -1,6 +1,5 @@
 package lesson_09.AnnotationsTask;
 
-
 import java.util.Objects;
 
 @Version(version = 1.0)         // annotate our class

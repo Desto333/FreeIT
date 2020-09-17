@@ -6,10 +6,8 @@ import java.lang.reflect.Method;
 
 public class Test {
     public static void main(String[] args) throws NoSuchFieldException, IllegalAccessException, NoSuchMethodException, InvocationTargetException {
-
         checkClass(MyService.class);
         checkClass(String.class);
-
     }
 
     public static <T> void checkClass(Class<T> className) throws NoSuchFieldException, NoSuchMethodException, IllegalAccessException, InvocationTargetException {

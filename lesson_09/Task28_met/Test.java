@@ -3,6 +3,7 @@ package lesson_09.Task28_met;
 
 public class Test {
     public static void main(String[] args) {
+
         Arr array = new Arr();          // you can test adding and getting elements to/from Arr class here
 
         array.addElement("Один");

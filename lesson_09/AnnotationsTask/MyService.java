@@ -3,11 +3,11 @@ package lesson_09.AnnotationsTask;
 
 import java.util.Objects;
 
-    @Version(version = 1.0)         // annotate our class
-    public class MyService {        //create our class MyService
-        private String date;        //create private fields of our class
-        private String author_name;
-        private int size;
+@Version(version = 1.0)         // annotate our class
+public class MyService {        //create our class MyService
+    private String date;        //create private fields of our class
+    private String author_name;
+    private int size;
 
     public MyService(String date, String author_name, int size) {   // create constructor
         this.date = date;
@@ -58,16 +58,16 @@ import java.util.Objects;
         return Objects.hash(date, author_name, size);
     }
 
-        @Override
-        public String toString() {      //toString method is overridden
-            return "MyService{" +
-                    "date='" + date + '\'' +
-                    ", author_name='" + author_name + '\'' +
-                    ", size=" + size +
-                    '}';
-        }
+    @Override
+    public String toString() {      //toString method is overridden
+        return "MyService{" +
+                "date='" + date + '\'' +
+                ", author_name='" + author_name + '\'' +
+                ", size=" + size +
+                '}';
+    }
 
-        private void thisClassInfo() {          //method returns the name of the class from which it is called
+    private void thisClassInfo() {          //method returns the name of the class from which it is called
         System.out.println(this.getClass().getName());
     }
 }

@@ -9,5 +9,6 @@ import java.lang.annotation.Target;
 @Target(ElementType.TYPE)               // annotation is used by classes
 public @interface Version {         //create annotation
     double version();               // create mandatory field
+
     String version_name() default "";   // create optional field
 }

@@ -1,52 +1,54 @@
 package lesson_10.Library_add;
 
-public class Book implements Comparable{
 
-    private int bookId;
+import java.util.LinkedHashMap;
+
+public class Book implements Comparable {
+
+    private int bookId;        //ссоздать список книг по примеру жанров, решить вопрос с bookId
     private String title;
-    private String bookGenre;   // как сделать как в задании методички? чтобы по указанию genreId вызывался соответствующий объект Genre
+    private Genre bookGenre;
+    private static LinkedHashMap<Integer, Book> bookList = new LinkedHashMap<>();
 
-    public int getBookId() {
-        return bookId;
+    public Book(String title, Genre bookGenre) {
+        this.bookId = bookList.size() + 1;
+        this.title = title;
+        this.bookGenre = bookGenre;
     }
 
-    public void setBookId(int bookId) {
-        this.bookId = bookId;
-    }
-
-    public String getTitle() {
-        return title;
+    public void setBookGenre(Genre bookGenre) {
+        this.bookGenre = bookGenre;
     }
 
     public void setTitle(String title) {
         this.title = title;
     }
 
-    public String getBookGenre() {
-        return bookGenre;
+    public int getBookId() {
+        return bookId;
     }
 
-    public void setBookGenre(String bookGenre) {
-        this.bookGenre = bookGenre;
+    public String getTitle() {
+        return title;
     }
 
-    public Book(int bookId, String title, String bookGenre) {
-        this.bookId = bookId;
-        this.title = title;
-        this.bookGenre = bookGenre;
+    public static Book createBook(String title, Genre bookGenre) {
+        Book book = new Book(title, bookGenre);
+        bookList.put(book.bookId, book);
+        return book;
     }
 
     @Override
     public String toString() {
-        return "\n" + "Book{" +
+        return "Book{" +
                 "id=" + bookId +
                 ", title='" + title + '\'' +
                 ", genre=" + bookGenre +
-                '}' + "\n" ;
+                '}' + "\n";
     }
 
     @Override
     public int compareTo(Object o) {
-        return this.title.compareTo(((Book)o).getTitle());
+        return this.title.compareTo(((Book) o).getTitle());
     }
 }

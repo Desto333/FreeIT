@@ -4,36 +4,20 @@ public class Book {
 
     private int bookId;
     private String title;
-    private String bookGenre;   // как сделать как в задании методички? чтобы по указанию genreId вызывался соответствующий объект Genre
+    private Genre bookGenre;
 
-    public int getBookId() {
-        return bookId;
-    }
-
-    public void setBookId(int bookId) {
+    public Book(int bookId, String title, Genre bookGenre) {
         this.bookId = bookId;
+        this.title = title;
+        this.bookGenre = bookGenre;
     }
 
-    public String getTitle() {
-        return title;
+    public void setBookGenre(Genre bookGenre) {
+        this.bookGenre = bookGenre;
     }
 
     public void setTitle(String title) {
         this.title = title;
-    }
-
-    public String getBookGenre() {
-        return bookGenre;
-    }
-
-    public void setBookGenre(String bookGenre) {
-        this.bookGenre = bookGenre;
-    }
-
-    public Book(int bookId, String title, String bookGenre) {
-        this.bookId = bookId;
-        this.title = title;
-        this.bookGenre = bookGenre;
     }
 
     @Override
@@ -42,6 +26,6 @@ public class Book {
                 "id=" + bookId +
                 ", title='" + title + '\'' +
                 ", genre=" + bookGenre +
-                '}'+"\n" ;
+                '}' + "\n";
     }
 }

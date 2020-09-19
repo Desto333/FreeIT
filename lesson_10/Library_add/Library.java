@@ -1,59 +1,63 @@
 package lesson_10.Library_add;
 
-import java.util.ArrayList;
-import java.util.Scanner;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.LinkedHashMap;
+import java.util.Map;
 
 
 public class Library {
 
-    ArrayList<Book> list = new ArrayList<>();
+    public static LinkedHashMap<Integer, Book> libList = new LinkedHashMap<>();
+    static BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 
-    public void addBookToLibrary(Book book) {
-        for (int i = 0; i < list.size(); i++) {
-            if(list.get(i).getBookId() == book.getBookId()) {
-                System.out.println("Ошибка! ID должен быть уникальным, такой id уже существует!");
-                return;
-            }
-        }
-        list.add(book);
+    public static void printAllBooksAlphabeticOrder() {
+        libList.entrySet().stream().sorted(Map.Entry.<Integer, Book>comparingByValue()).forEach(System.out::println);
     }
 
-    public ArrayList<Book> getAllBooks() {
-        return list;
+    public static void printAllBooksReverseAlphabeticOrder() {
+        libList.entrySet().stream().sorted(Map.Entry.<Integer, Book>comparingByValue().reversed()).forEach(System.out::println);
     }
 
-    public void removeBook(int id) {
-        for (int i = 0; i < list.size(); i++) {
-            if(list.get(i).getBookId() == id) {
-                list.remove(i);
-                break;
+    public static void printAllBooksEnterOrder() {
+        libList.entrySet().forEach(System.out::println);
+    }
+
+    public static void addBookToLibrary() {
+        System.out.println("Для добавления новой книги в библиотеку введите следующие данные: " + "\n");
+        System.out.println("введите название книги: ");
+        String tempTitle = null;
+        try {
+            tempTitle = reader.readLine();
+        } catch (IOException e) {
+            System.out.println("Некорректный ввод названия книги!");
+            ;
+        }
+        System.out.println("определите жанр книги: ");
+        Genre tempGenre = Genre.defineGenre();
+        Book book = Book.createBook(tempTitle, tempGenre);
+        libList.put(book.getBookId(), book);
+    }
+
+
+    public static void removeBookFromLibrary(int id) {
+        libList.entrySet().removeIf(entry -> entry.getKey() == id);
+    }
+
+    public static void editBook(int bookId) {
+        System.out.println("Введите новое название книги..");
+        String newBookTitle = null;
+        try {
+            newBookTitle = reader.readLine();
+        } catch (IOException e) {
+            System.out.println("Вы ввели некорректное название книги при редактировании.");
+        }
+        for (Map.Entry<Integer, Book> entry : libList.entrySet()) {
+            if (entry.getKey() == bookId) {
+                entry.getValue().setTitle(newBookTitle);
+                entry.getValue().setBookGenre(Genre.defineGenre());
             }
         }
     }
-
-    public void editBook(Book book) {
-        Scanner sc = new Scanner(System.in);
-        while(true) {
-            System.out.println("Введите новые данные книги: id..");
-                    String tempStr = sc.nextLine();
-                    int newId = Integer.parseInt(tempStr);
-                    for (int i = 0; i < list.size(); i++) {
-                        if (list.get(i).getBookId() == newId) {
-                            System.out.println("Ошибка! ID должен быть уникальным, такой id уже существует!");
-                        }
-
-                    book.setBookId(newId);
-
-            }
-
-            System.out.println("..название книги..");
-            String newBookTitle = sc.nextLine();
-            book.setTitle(newBookTitle);
-
-            System.out.println("..жанр.");
-            String newBookGenre = sc.nextLine();
-            book.setBookGenre(newBookGenre);
-            break;
-            }
-        }
 }

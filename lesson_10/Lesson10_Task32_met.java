@@ -40,25 +40,21 @@ public class Lesson10_Task32_met {
                 "впоследствии - был даже рад сорвать на ком-нибудь свое дурное  настроение.\n" +
                 "Хэллем же был для этого идеальным объектом.";
 
-        StringTokenizer st = new StringTokenizer(text, ".,!?:;()\"- \n");                   // create StringTokenizer object and define all delimiters
-        List<String> list = new ArrayList<>();                                                      // create new ArrayList to store delimited elements of our text
+        StringTokenizer st = new StringTokenizer(text, ".,!?:;()\"- \n");                   // create StringTokenizer object and define all probable delimiters
         Map<String, Integer> freqVocab = new TreeMap<>();                                       // create new TreeMap to store our frequency vocabulary
-        while(st.hasMoreTokens()) {                                                             // delimit our text to words using lower case and save them to ArrayList
-            list.add(st.nextToken().toLowerCase());
-        }
-
-        for (int i = 0; i < list.size(); i++) {                                                 // go through all the words in ArrayList, count repeatings and save the result to our frequency vocabulary
-            String element = list.get(i);
-            int counter = 0;
-            for (int j = 0; j < list.size(); j++) {
-                if(element.equals(list.get(j))) {
-                    counter++;
+        while(st.hasMoreTokens()) {                                                             // using while cycle we check if every new token is already contained in our frequency vocabulary
+            String elementToAdd = st.nextToken().toLowerCase();
+            for (Map.Entry<String, Integer> entry : freqVocab.entrySet()) {
+                if (elementToAdd.equals(entry.getKey())) {                                      // if token is contained, we increase its appearance frequency by 1
+                    entry.setValue(entry.getValue()+1);
                 }
             }
-            freqVocab.put(element, counter);
+            if(!freqVocab.containsKey(elementToAdd)) {                                          // if token is not contained, we add it to our vocabulary
+                freqVocab.put(elementToAdd, 1);
+            }
         }
 
-        for(Map.Entry<String, Integer> entry : freqVocab.entrySet()) {                          // go through all the words in our vocabulary and print out words and number of repeatings
+        for(Map.Entry<String, Integer> entry : freqVocab.entrySet()) {                          // we go through all the words in our vocabulary and print out words and number of their appearances in the text
             System.out.println(entry.getKey() + ": " + entry.getValue());
         }
     }

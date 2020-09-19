@@ -4,6 +4,7 @@ package lesson_10;
 оценками. Удалить неудовлетворительные оценки из списка.*/
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
 
@@ -15,19 +16,15 @@ public class Lesson10_Task29_met {
             listOfGrades.add(i, random.nextInt(11));
         }
 
-        for (int i = 0; i < listOfGrades.size(); i++) {         //print out all elements of our ArrayList
-            System.out.print(listOfGrades.get(i) + " ");
-        }
+        System.out.println(Arrays.toString(listOfGrades.toArray()));        //print out all List elements
         System.out.println();
 
-        for (int i = listOfGrades.size()-1; i >= 0; i--) {      // remove all grades lower than 3
-            if(listOfGrades.get(i) < 3) {
+        for (int i = listOfGrades.size() - 1; i >= 0; i--) {      // remove all grades lower than 3
+            if (listOfGrades.get(i) < 3) {
                 listOfGrades.remove(i);
             }
         }
 
-        for (int i = 0; i < listOfGrades.size(); i++) {         //print out all elements of our ArrayList
-            System.out.print(listOfGrades.get(i) + " ");
-        }
+        System.out.println(Arrays.toString(listOfGrades.toArray()));    // print out all List elements after correction
     }
 }

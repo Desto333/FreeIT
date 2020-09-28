@@ -2,6 +2,7 @@ package lesson_09.Task28_met;
 
 
 import java.util.ArrayList;
+import java.util.NoSuchElementException;
 
 public class Arr<T> {
 

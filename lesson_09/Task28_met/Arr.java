@@ -8,7 +8,8 @@ public class Arr<T> {
     private ArrayList<T> arr = new ArrayList<>();
 
     public T getElement(int index) {
-        return arr.get(index);
+        if(arr.get(index) != null) return arr.get(index);
+        else throw new NoSuchElementException("Элемент с таким индексом не существует!");
     }
 
     public void addElement(T element) {

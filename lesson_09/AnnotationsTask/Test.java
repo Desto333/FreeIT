@@ -15,21 +15,21 @@ public class Test {
         if (className.isAnnotationPresent(Version.class)) {        // check if class is annotated by Version annotation
             MyService myService = new MyService();                 // if is annotated we create a new object of MyService class...
 
-            Field date = mS.getClass().getDeclaredField("date");        // ...we get access to and make changes to private fields of the class...
+            Field date = myService.getClass().getDeclaredField("date");        // ...we get access to and make changes to private fields of the class...
             date.setAccessible(true);
-            date.set(mS, "2019");
+            date.set(myService, "2019");
 
-            Field auth_name = mS.getClass().getDeclaredField("author_name");
+            Field auth_name = myService.getClass().getDeclaredField("author_name");
             auth_name.setAccessible(true);
-            auth_name.set(mS, "John Deer");
+            auth_name.set(myService, "John Deer");
 
-            Field size = mS.getClass().getDeclaredField("size");
+            Field size = myService.getClass().getDeclaredField("size");
             size.setAccessible(true);
-            size.setInt(mS, 500);
+            size.setInt(myService, 500);
 
             Method thClssInf = MyService.class.getDeclaredMethod("thisClassInfo", null);        // ... and we call a private method of the class
             thClssInf.setAccessible(true);
-            thClssInf.invoke(mS, null);
+            thClssInf.invoke(myService, null);
 
             System.out.println(mS.toString());          // print out the object of the class we created to make sure that we really got access to private fields of the class
         } else System.out.println("\n" + "Аннотации не обнаружено");

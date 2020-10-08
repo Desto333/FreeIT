@@ -42,19 +42,18 @@ public class Lesson10_Task32_met {
 
         StringTokenizer st = new StringTokenizer(text, ".,!?:;()\"- \n");                   // create StringTokenizer object and define all probable delimiters
         Map<String, Integer> freqVocab = new TreeMap<>();                                       // create new TreeMap to store our frequency vocabulary
-        while(st.hasMoreTokens()) {                                                             // using while cycle we check if every new token is already contained in our frequency vocabulary
+        while (st.hasMoreTokens()) {                                                             // using while cycle we check if every new token is already contained in our frequency vocabulary
             String elementToAdd = st.nextToken().toLowerCase();
-            for (Map.Entry<String, Integer> entry : freqVocab.entrySet()) {
-                if (elementToAdd.equals(entry.getKey())) {                                      // if token is contained, we increase its appearance frequency by 1
-                    entry.setValue(entry.getValue()+1);
-                }
-            }
-            if(!freqVocab.containsKey(elementToAdd)) {                                          // if token is not contained, we add it to our vocabulary
-                freqVocab.put(elementToAdd, 1);
-            }
+//            if (freqVocab.containsKey(elementToAdd)) {                                          // if contained, we replace its old value with a new one, incremented by 1
+//                freqVocab.put(elementToAdd, freqVocab.get(elementToAdd) + 1);
+//            } else {                                                                            // if not, we put to vocabulary a new key with 1 as its value
+//                freqVocab.put(elementToAdd, 1);
+//            }
+
+            freqVocab.merge(elementToAdd, 1, Integer::sum);                              // or we can use Java 8 map.merge() method. Integer::sum == (a, b) -> a + b. How to read those method references???????
         }
 
-        for(Map.Entry<String, Integer> entry : freqVocab.entrySet()) {                          // we go through all the words in our vocabulary and print out words and number of their appearances in the text
+        for (Map.Entry<String, Integer> entry : freqVocab.entrySet()) {                          // we go through all the words in our vocabulary and print out words and number of their appearances in the text
             System.out.println(entry.getKey() + ": " + entry.getValue());
         }
     }

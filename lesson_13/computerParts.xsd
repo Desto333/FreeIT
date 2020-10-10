@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+            targetNamespace="computerParts.xsd" xmlns="computerParts.xsd">
+    <!-- определение простых элементов -->
+    <xsd:element name="Name" type="xsd:string"/>
+    <xsd:element name="Origin" type="xsd:string"/>
+    <xsd:element name="Peripheral" type="xsd:boolean"/>
+    <xsd:element name="DeviceGroup" type="xsd:string"/>
+    <xsd:element name="CoolerPresence" type="xsd:boolean"/>
+    <xsd:element name="ConnPortSlot" type="xsd:string"/>
+    <xsd:element name="Critical" type="xsd:boolean"/>
+
+    <!-- определение составных элементов -->
+    <xsd:element name="EnergyConsumption">
+        <xsd:complexType>
+            <xsd:simpleContent>
+                <xsd:extension base="xsd:double">
+                    <xsd:attribute name="unit" type="xsd:string"/>
+                </xsd:extension>
+            </xsd:simpleContent>
+        </xsd:complexType>
+    </xsd:element>
+
+    <xsd:element name="Price">
+        <xsd:complexType>
+            <xsd:simpleContent>
+                <xsd:extension base="xsd:double">
+                    <xsd:attribute name="currency" type="xsd:string" default="USD"/>
+                </xsd:extension>
+            </xsd:simpleContent>
+
+        </xsd:complexType>
+    </xsd:element>
+
+    <xsd:element name="Type">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element ref="Peripheral"/>
+                <xsd:element ref="DeviceGroup"/>
+                <xsd:element ref="EnergyConsumption"/>
+                <xsd:element ref="CoolerPresence"/>
+                <xsd:element ref="ConnPortSlot"/>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+
+    <xsd:element name="Device">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element ref="Name"/>
+                <xsd:element ref="Origin"/>
+                <xsd:element ref="Price"/>
+                <xsd:element ref="Type"/>
+                <xsd:element ref="Critical"/>
+            </xsd:sequence>
+            <xsd:attribute name="id" type="xsd:positiveInteger" use="required"/>
+        </xsd:complexType>
+    </xsd:element>
+
+    <xsd:element name="Devices">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element ref="Device" maxOccurs="unbounded"/>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+
+</xsd:schema>

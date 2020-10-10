@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Devices xmlns="computerParts.xsd">
+    <Device id="1">
+        <Name>Mouse optical Logitech B100</Name>
+        <Origin>China</Origin>
+        <Price>5.00</Price>
+        <Type>
+            <Peripheral>true</Peripheral>
+            <DeviceGroup>input devices</DeviceGroup>
+            <EnergyConsumption unit="mA">100.0</EnergyConsumption>
+            <CoolerPresence>false</CoolerPresence>
+            <ConnPortSlot>Usb 2.0</ConnPortSlot>
+        </Type>
+        <Critical>false</Critical>
+    </Device>
+    <Device id="2">
+        <Name>Keyboard Logitech M2500</Name>
+        <Origin>China</Origin>
+        <Price>10</Price>
+        <Type>
+            <Peripheral>true</Peripheral>
+            <DeviceGroup>input devices</DeviceGroup>
+            <EnergyConsumption unit="mA">250</EnergyConsumption>
+            <CoolerPresence>false</CoolerPresence>
+            <ConnPortSlot>Usb 2.0</ConnPortSlot>
+        </Type>
+        <Critical>false</Critical>
+    </Device>
+    <Device id="3">
+        <Name>Monitor Samsung UE-2278 22"</Name>
+        <Origin>South Korea</Origin>
+        <Price currency="GBP">150.00</Price>
+        <Type>
+            <Peripheral>true</Peripheral>
+            <DeviceGroup>output devices</DeviceGroup>
+            <EnergyConsumption unit="A">1.5</EnergyConsumption>
+            <CoolerPresence>false</CoolerPresence>
+            <ConnPortSlot>HDMI</ConnPortSlot>
+        </Type>
+        <Critical>true</Critical>
+    </Device>
+    <Device id="4">
+        <Name>Videocard NVIDIA GeForce GTX 1660 Super</Name>
+        <Origin>Taiwan</Origin>
+        <Price currency="EUR">250.00</Price>
+        <Type>
+            <Peripheral>false</Peripheral>
+            <DeviceGroup>videocards</DeviceGroup>
+            <EnergyConsumption unit="A">4</EnergyConsumption>
+            <CoolerPresence>true</CoolerPresence>
+            <ConnPortSlot>PCI Express x16 3.0</ConnPortSlot>
+        </Type>
+        <Critical>true</Critical>
+    </Device>
+    <Device id="5">
+        <Name>CPU Intel Core i5-9400F Coffee Lake</Name>
+        <Origin>China</Origin>
+        <Price >150.00</Price>
+        <Type>
+            <Peripheral>false</Peripheral>
+            <DeviceGroup>CPUs</DeviceGroup>
+            <EnergyConsumption unit="A">1.1</EnergyConsumption>
+            <CoolerPresence>true</CoolerPresence>
+            <ConnPortSlot>LGA1151 v2</ConnPortSlot>
+        </Type>
+        <Critical>true</Critical>
+    </Device>
+    <Device id="6">
+        <Name>RAM HyperX Fury 2x8GB PC4-21300</Name>
+        <Origin>Taiwan</Origin>
+        <Price>80.00</Price>
+        <Type>
+            <Peripheral>false</Peripheral>
+            <DeviceGroup>RAM</DeviceGroup>
+            <EnergyConsumption unit="mA">800</EnergyConsumption>
+            <CoolerPresence>false</CoolerPresence>
+            <ConnPortSlot>DDR4</ConnPortSlot>
+        </Type>
+        <Critical>true</Critical>
+    </Device>
+</Devices>

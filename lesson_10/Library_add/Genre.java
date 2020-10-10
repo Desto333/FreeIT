@@ -15,7 +15,15 @@ public class Genre {
 
     public Genre(String genreName) {
         this.genreName = genreName;
-        this.genreId = genreList.size() + 1;
+        this.genreId = generateGenreId();
+    }
+
+    public static int generateGenreId() {
+        return genreList.keySet().stream().max(Integer::compareTo).orElse(0) + 1;
+    }
+
+    public int getGenreId() {
+        return genreId;
     }
 
     public static Genre createGenre(String genreName) {
@@ -84,4 +92,5 @@ public class Genre {
                 "genre Name ='" + genreName + "', genre ID ='" + genreId + '\'' +
                 '}';
     }
+
 }

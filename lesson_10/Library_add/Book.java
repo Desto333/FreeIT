@@ -11,9 +11,13 @@ public class Book implements Comparable {
     private static LinkedHashMap<Integer, Book> bookList = new LinkedHashMap<>();
 
     public Book(String title, Genre bookGenre) {
-        this.bookId = bookList.size() + 1;
+        this.bookId = generateBookId();
         this.title = title;
         this.bookGenre = bookGenre;
+    }
+
+    public static int generateBookId() {
+        return bookList.keySet().stream().max(Integer::compareTo).orElse(0) + 1;
     }
 
     public void setBookGenre(Genre bookGenre) {

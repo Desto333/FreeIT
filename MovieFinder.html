@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Поиск фильмов</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+<div class="search-form">
+    <form action="" method="get" id="searchForm">
+        <div>
+        <input type="search" class="f1" id="searchInput" value="" placeholder="Введите название фильма"/>
+        <input type="button" class="bt1" id="searchButton" value="Поиск" onclick="movieSearchFunction()"/>
+        <input type="reset" class="bt2" id="clearButton" value="Очистить" onclick="window.location.reload()"/>
+        </div>
+    </form>
+</div>
+
+
+<div class="d1">
+    <table id="records_table"></table>
+</div>
+
+<script src="js/myScript.js" type="text/javascript"></script>
+
+
+</body>
+</html>

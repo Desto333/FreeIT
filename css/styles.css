@@ -1,0 +1,71 @@
+TABLE {
+    width: 800px;
+    margin-left: 28%;
+}
+TD, TH{
+    border: 2px solid #efd6be;
+}
+body{
+    color: #22212d;
+    background: url("https://images.wallpaperscraft.ru/image/svet_bleklyy_fon_85547_2560x1600.jpg");
+}
+.search-form {
+    width: 500px;
+    height: 50px;
+    position: absolute;
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin-left: 37%;
+    margin-top: 5%;
+}
+.d1{
+    margin-top: 10%;
+    width: available;
+}
+.f1 {background: #efd6be;}
+.f1 {
+    width: 300px;
+    height: 30px;
+    padding-left: 10px;
+    border: 2px solid #7BA7AB;
+    border-radius: 5px;
+    outline: none;
+    background: #F9F0DA;
+    color: #9E9C9C;
+}
+.bt1 {
+    position: absolute;
+    top: 0;
+    right: 130px;
+    width: 60px;
+    height: 30px;
+    border: none;
+    background: #7BA7AB;
+    border-radius: 5px 5px 5px 5px;
+    cursor: pointer;
+}
+.bt1 {
+    content: "\f002";
+    font-family: FontAwesome;
+    font-size: 16px;
+    color: #F9F0DA;
+}
+.bt2 {
+    position: absolute;
+    top: 0;
+    right: 40px;
+    width: 80px;
+    height: 30px;
+    border: none;
+    background: #7BA7AB;
+    border-radius: 5px 5px 5px 5px;
+    cursor: pointer;
+}
+.bt2 {
+    content: "\f002";
+    font-family: FontAwesome;
+    font-size: 16px;
+    color: #F9F0DA;
+}
